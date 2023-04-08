@@ -45,9 +45,7 @@ function Home({ account, contract, provider }) {
             />
             <button onClick={addCustomer}>Check Leader Board</button>
           </>
-        ) : (
-          ""
-        )}
+        ) : null}
 
         <MainContainer
           account={account}
