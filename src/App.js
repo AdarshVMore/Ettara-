@@ -1,23 +1,60 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { ethers } from "ethers";
+import Loyalty from "./abis/Loyalty.json";
+import Landing from "./pages/landing/Landing";
+import Home from "./pages/home/Home";
 
 function App() {
+  const [account, setAccount] = useState("");
+  const [contract, setContract] = useState("");
+  const [provider, setProvider] = useState("");
+  useEffect(() => {
+    const provider = new ethers.providers.Web3Provider(window.ethereum);
+
+    const loadProvider = async () => {
+      if (provider) {
+        window.ethereum.on("chainChanged", () => {
+          window.location.reload();
+        });
+
+        window.ethereum.on("accountsChanged", () => {
+          window.location.reload();
+        });
+        await provider.send("eth_requestAccounts", []);
+        const signer = provider.getSigner();
+        const address = await signer.getAddress();
+        setAccount(address);
+        let contractAddress = "0xF8396bF71EED96FDc1D74E8aBfF0f221A04D7bee";
+
+        const contract = new ethers.Contract(
+          contractAddress,
+          Loyalty.abi,
+          signer
+        );
+
+        setContract(contract);
+        setProvider(provider);
+      } else {
+        console.error("Metamask is not installed");
+      }
+    };
+    provider && loadProvider();
+  }, []);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Landing />} />
+          <Route
+            path="home/*"
+            element={
+              <Home account={account} contract={contract} provider={provider} />
+            }
+          />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
