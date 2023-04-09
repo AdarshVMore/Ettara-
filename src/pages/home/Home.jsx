@@ -22,7 +22,7 @@ function Home({ account, contract, provider }) {
         const customers = await contract.getAllCustomers();
 
         for (let i = 0; i < customers.length; i++) {
-          if (customers[i] == account) {
+          if (customers[i] === account) {
             setIsCustomer(true);
           }
         }
@@ -54,7 +54,7 @@ function Home({ account, contract, provider }) {
       ) : (
         <>
           <div>
-            <Sidebar />
+            <Sidebar contract={contract} account={account} />
           </div>
           <div>
             <Nav account={account} contract={contract} Owner={Owner} />

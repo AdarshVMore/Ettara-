@@ -33,13 +33,18 @@ contract Loyalty{
     mapping(address => Customer) addressToCustomer;
 
 
-    function addNft(string memory _hash, uint _designation) public {
-        if(_designation == 0){
-            gubblieNFTs.push(_hash);
-        }
-        if(_designation == 1){
-            badgesNfts.push(_hash);
-        }
+    // function addNft(string memory _hash, uint _designation) public {
+    //     if(_designation == 0){
+    //         gubblieNFTs.push(_hash);
+    //     }
+    //     if(_designation == 1){
+    //         badgesNfts.push(_hash);
+    //     }
+    // }
+
+    function sendNft(address _address, string memory _hash) public {
+        require(msg.sender == owner);
+        addressToCustomer[_address].NFTs.push(_hash);
     }
 
     function addCustomer(string memory _funkyName) public{
@@ -55,14 +60,14 @@ contract Loyalty{
 
     function earnPoints(address _customer, string memory items, uint _bill) public returns(uint){
 
-        if(msg.sender == owner) {
-            uint pointsToAdd = _bill % 20;  //100 rs spent = 5 points got
-            addressToCustomer[_customer].overAllPoints += pointsToAdd;
-            addressToCustomer[_customer].orders.push(items);
-            orderNumber++;
-            gubblieOrder(_customer);
-            return(addressToCustomer[_customer].overAllPoints);        
-        }
+        require(msg.sender == owner);
+
+        uint pointsToAdd = _bill / 20;  //100 rs spent = 5 points got
+        addressToCustomer[_customer].overAllPoints += pointsToAdd;
+        addressToCustomer[_customer].orders.push(items);
+        orderNumber++;
+        gubblieOrder(_customer);
+        return(addressToCustomer[_customer].overAllPoints);        
         
     }
 

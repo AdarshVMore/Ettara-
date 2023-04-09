@@ -6,6 +6,9 @@
   color: white;
   margin-top: 10px;
 }
+.leaderBoard {
+  height: 80vh;
+}
 
 .leaderBoard .top {
   display: flex;

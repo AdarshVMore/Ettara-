@@ -25,7 +25,7 @@ function Nav({ account, contract, Owner }) {
           </button>
         </>
       ) : (
-        <div className="points">{overAllPoints}</div>
+        <div className="points">{overAllPoints} points</div>
       )}
       <div className="address">{account}</div>
       <div className="profile">

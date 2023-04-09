@@ -1,0 +1,28 @@
+.give_points {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+  gap: 2rem;
+}
+
+.give_points input {
+  width: 400px;
+  height: 50px;
+  text-align: center;
+  border: 0px;
+  border-radius: 10px;
+  outline: none;
+  background-color: e2c2aa;
+  color: #422700;
+}
+
+.give_points button {
+  padding: 8px 15px;
+  border-radius: 10px;
+  border: 0px;
+  background-color: #e2c2aa;
+  color: #422700;
+  font-weight: 700;
+}

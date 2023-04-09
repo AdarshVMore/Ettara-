@@ -1,0 +1,28 @@
+.tier {
+  margin: 50px 30px;
+  display: flex;
+  flex-direction: column;
+}
+.tier h3 {
+  color: wheat;
+  margin-bottom: 30px;
+}
+
+.tier .cst_Addr {
+  width: 400px;
+  height: 50px;
+  text-align: center;
+  color: rgb(119, 40, 0);
+  background-color: wheat;
+  border-radius: 10px;
+  border: 0px;
+  margin-bottom: 30px;
+}
+
+.tier button {
+  margin-top: 20px;
+  width: 120px;
+  height: 30px;
+  border: 0px;
+  border-radius: 10px;
+}

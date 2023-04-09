@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+import "./givepoints.css";
 
 function Givepoints({ contract }) {
   const itemRef = useRef(null);
@@ -17,17 +18,16 @@ function Givepoints({ contract }) {
   };
 
   return (
-    <div>
+    <div className="give_points">
       <div className="addressOfCustomer">
-        <p>Address Of Customer</p>
-        <input type="text" ref={addressRef} />
+        <input type="text" ref={addressRef} placeholder="Address" />
       </div>
       <div className="items">
-        <p>What did he buy :</p>
-        <input type="text" ref={itemRef} />
+        <input type="text" ref={itemRef} placeholder="What did he buy?" />
       </div>
-      <p>Bill (in INR)</p>
-      <input type="text" ref={billRef} />
+      <div className="bill">
+        <input type="text" ref={billRef} placeholder="how much did he spent?" />
+      </div>
       <button onClick={givePoints}> Give Points</button>
     </div>
   );

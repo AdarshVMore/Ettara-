@@ -4,6 +4,7 @@ import Profile from "./components/profile/Profile";
 import Events from "./components/events/Events";
 import Lboard from "./components/Lboard/Lboard";
 import Givepoints from "./components/givepoints/Givepoints";
+import Nftupload from "./components/nftUpload/Nftupload";
 
 function MainContainer({ account, contract, Owner }) {
   return (
@@ -17,10 +18,16 @@ function MainContainer({ account, contract, Owner }) {
         <Route path="events" element={<Events contract={contract} />} />
         <Route path="leaderboard" element={<Lboard contract={contract} />} />
         {Owner ? (
-          <Route
-            path="givepoint"
-            element={<Givepoints contract={contract} />}
-          />
+          <>
+            <Route
+              path="givepoint"
+              element={<Givepoints contract={contract} />}
+            />
+            <Route
+              path="nftupload"
+              element={<Nftupload contract={contract} />}
+            />
+          </>
         ) : null}
       </Routes>
     </div>

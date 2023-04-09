@@ -1,21 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./sidebar.css";
 import logo from "../../../landing/imgs/logo.png";
 
-function Sidebar() {
-  // const [Owner, setOwner] = useState(false);
+function Sidebar({ contract, account }) {
+  const [Owner, setOwner] = useState(false);
 
-  // useEffect(
-  //   (e) => {
-  //     const ownerCheck = async () => {
-  //       let isOwner = await contract.isOwner();
-  //       setOwner(isOwner);
-  //     };
+  useEffect(
+    (e) => {
+      const ownerCheck = async () => {
+        let isOwner = await contract.isOwner();
+        setOwner(isOwner);
+      };
 
-  //     ownerCheck();
-  //   },
-  //   [account, contract]
-  // );
+      ownerCheck();
+    },
+    [account, contract]
+  );
 
   return (
     <div className="sidebar">
@@ -28,6 +28,13 @@ function Sidebar() {
         <a href="/home/leaderboard">Leaderboard</a>
         <a href="/home/events">Events</a>
         <a href="/home/rules">Rules</a>
+        {Owner ? (
+          <>
+            <a href="/home/nftupload">send NFTs</a>
+          </>
+        ) : (
+          ""
+        )}
       </div>
     </div>
   );
