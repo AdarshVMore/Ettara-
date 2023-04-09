@@ -1,0 +1,34 @@
+.landing-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px 100px;
+  background: #321e00;
+}
+.landing-nav img {
+  width: 25vw;
+  padding-left: 3vw;
+}
+
+.landing-nav ul li {
+  list-style-type: none;
+  background: #321e00;
+  color: white;
+}
+.landing-nav ul {
+  display: flex;
+  background: #321e00;
+  color: white;
+}
+.landing-nav a {
+  text-decoration: none;
+  background: #321e00;
+  color: white;
+  padding: 10px 30px;
+  font-size: 20px;
+}
+.btn a {
+  padding: 15px 25px;
+  background: #dead84;
+  border-radius: 10px;
+}

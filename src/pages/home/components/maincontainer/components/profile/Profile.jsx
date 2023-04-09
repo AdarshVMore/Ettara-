@@ -1,13 +1,18 @@
 import React, { useEffect, useState } from "react";
+import { ethers } from "ethers";
 
 function Profile({ account, contract }) {
   const [customerInfo, setCustomerInfo] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
+  const [overAllPoints, setOverAllPoints] = useState("");
   useEffect(() => {
     const getCustomer = async () => {
       const customerInfo = await contract.getCustomer(account);
       setCustomerInfo(customerInfo);
-      console.log(customerInfo.customer_address);
+      const bigNumber = ethers.BigNumber.from(customerInfo.overAllPoints);
+      const string = bigNumber.toString();
+      setOverAllPoints(string);
+
       setIsLoaded(true);
     };
 
@@ -20,7 +25,7 @@ function Profile({ account, contract }) {
         <>
           <p>Username : {customerInfo.funkyName}</p>
           <p>Tier : {customerInfo.tier}</p>
-          {/* <p>Points : {customerInfo.overAllPoints}</p> */}
+          <p>Points : {overAllPoints}</p>
         </>
       ) : (
         "loading..."

@@ -28,7 +28,7 @@ contract Loyalty{
 
     Customer[] public customers;
     address[] public allCustomers;
-    address[] public owners = [0xAb8483F64d9C6d1EcF9b849Ae677dD3315835cb2];
+    address public owner = 0x607d1cB32B9030b1968a377Bec2c17ebaaf412e6;
 
     mapping(address => Customer) addressToCustomer;
 
@@ -55,20 +55,15 @@ contract Loyalty{
 
     function earnPoints(address _customer, string memory items, uint _bill) public returns(uint){
 
-        bool isOwner = false;
-        for(uint i=0 ; i<owners.length ; i++) {
-            if(msg.sender == owners[i]) {
-                isOwner = true;
-            }
+        if(msg.sender == owner) {
+            uint pointsToAdd = _bill % 20;  //100 rs spent = 5 points got
+            addressToCustomer[_customer].overAllPoints += pointsToAdd;
+            addressToCustomer[_customer].orders.push(items);
+            orderNumber++;
+            gubblieOrder(_customer);
+            return(addressToCustomer[_customer].overAllPoints);        
         }
-
-        require(isOwner, "You are not the owner");
-        uint pointsToAdd = _bill % 20;  //100 rs spent = 5 points got
-        addressToCustomer[_customer].overAllPoints += pointsToAdd;
-        addressToCustomer[_customer].orders.push(items);
-        orderNumber++;
-        gubblieOrder(_customer);
-        return(addressToCustomer[_customer].overAllPoints);
+        
     }
 
     function giveTier(address _address) public {
@@ -110,7 +105,16 @@ contract Loyalty{
         return addressToCustomer[_address];
     }
 
-    function getCustomerList() public view returns(address[] memory) {
+    function getAllCustomers() public view returns(address[] memory) {
         return allCustomers;
+    }
+
+    function isOwner() public view returns(bool ) {
+        if(msg.sender == owner) {
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 }

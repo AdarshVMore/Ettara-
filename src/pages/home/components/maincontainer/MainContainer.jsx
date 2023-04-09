@@ -2,9 +2,10 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Profile from "./components/profile/Profile";
 import Events from "./components/events/Events";
-import LeaderBoard from "./components/leaderboard/LeaderBoard";
+import Lboard from "./components/Lboard/Lboard";
+import Givepoints from "./components/givepoints/Givepoints";
 
-function MainContainer({ account, contract, provider }) {
+function MainContainer({ account, contract, Owner }) {
   return (
     <div>
       <Routes>
@@ -12,11 +13,15 @@ function MainContainer({ account, contract, provider }) {
           path="profile"
           element={<Profile account={account} contract={contract} />}
         />
-        <Route path="events" element={<Events />} />
-        <Route
-          path="leaderboard"
-          element={<LeaderBoard account={account} contract={contract} />}
-        />
+
+        <Route path="events" element={<Events contract={contract} />} />
+        <Route path="leaderboard" element={<Lboard contract={contract} />} />
+        {Owner ? (
+          <Route
+            path="givepoint"
+            element={<Givepoints contract={contract} />}
+          />
+        ) : null}
       </Routes>
     </div>
   );

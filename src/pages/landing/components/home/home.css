@@ -1,0 +1,155 @@
+.container1 {
+  background: #321e00;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 2vw;
+  padding: -1vh 10vw;
+  height: 80vh;
+  width: 98.9vw;
+  overflow-x: hidden;
+}
+.container1 .text {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.container1 .text h1 {
+  font-size: 55px;
+}
+.container1 .text p {
+  margin-bottom: 60px;
+}
+.container1 a {
+  text-decoration: none;
+  font-size: 20px;
+  background-color: #dead84;
+  padding: 20px 35px;
+  border-radius: 10px;
+  color: white;
+}
+.container1 img {
+  height: 550px;
+  border-radius: 20px;
+}
+
+.container2 {
+  display: flex;
+  gap: 2rem;
+  margin: 15vh 10vw;
+  align-items: center;
+  justify-content: center;
+}
+.container2 .text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: -40px;
+}
+
+.container2 .text h2 {
+  font-weight: 800;
+  font-size: 50px;
+}
+.container2 img {
+  height: 500px;
+  margin-right: 3vw;
+}
+
+.container2 .top {
+  color: gray;
+}
+.container2 .bottom {
+  color: #563300;
+  margin-bottom: 30px;
+}
+
+.container2 a {
+  text-decoration: none;
+  color: white;
+  background: #dead84;
+  padding: 15px 25px;
+  border-radius: 10px;
+}
+
+.container3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #27272b;
+}
+
+.container3 .text h2 {
+  text-align: center;
+  color: white;
+  font-size: 50px;
+  padding: 20px;
+  margin-top: 25px;
+}
+.container3 .text p {
+  color: white;
+  margin-bottom: 40px;
+  text-align: center;
+}
+.container1 .text {
+  display: flex;
+}
+.container3 img {
+  height: 20vw;
+  margin: 20px 40px;
+}
+
+.container3 .imgs {
+  padding-bottom: 50px;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 5rem 3rem;
+  background-color: #563300;
+  color: white;
+}
+.footer .upper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6rem;
+}
+.footer ul {
+  display: flex;
+  list-style: none;
+}
+.footer .upper a {
+  margin: 10px;
+  text-decoration: none;
+  color: white;
+  text-align: left;
+}
+
+.footer .upper h3 {
+  font-size: 30px;
+  margin-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.footer .another-divs p {
+  color: #dead84;
+  margin-top: 10px;
+}
+
+.footer img {
+  width: 15vw;
+}
+.footer .logo img {
+  text-align: left;
+  margin-bottom: 15px;
+}
+
+.footer .bottom {
+  margin-top: 40px;
+}
