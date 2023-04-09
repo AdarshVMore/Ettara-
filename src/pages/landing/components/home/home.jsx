@@ -99,15 +99,15 @@ function Home() {
           </div>
           <div className="another-divs">
             <h3>Address</h3>
-            <p>HUMAN begin</p>
-            <p>tends to take.</p>
-            <p>their five.</p>
-            <p>Basic senses</p>
+            <p>boutique hotel,</p>
+            <p>Ground floor,</p>
+            <p>Juhu residency,</p>
+            <p>Mumbai, Maharashtra 400049</p>
           </div>
           <div className="another-divs">
             <h3>Contact</h3>
-            <p>HUMAN begin</p>
-            <p>tends to take.</p>
+            <p>+918655805815</p>
+            <p>9212340202</p>
             <p>their five.</p>
             <p>Basic senses</p>
           </div>
