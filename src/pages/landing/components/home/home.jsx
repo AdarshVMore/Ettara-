@@ -50,8 +50,8 @@ function Home() {
         <div className="text">
           <h2>Our Shop</h2>
           <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam
-            consequuntur <br /> iure impedit. Autem tempore possimus dolor
+            Whether you're looking for a quick pick-me-up or a relaxing place to
+            unwind, <br /> our café has got you covered.
           </p>
         </div>
         <div className="imgs">
@@ -71,7 +71,8 @@ function Home() {
             <div className="logo">
               <img src={logo} alt="" />
               <p>
-                Lorem ipsum dolt amet <br /> consectetur .
+                Indulge in the rich aroma of <br /> freshly brewed coffee at our
+                café..
               </p>
               <ul>
                 <li>
