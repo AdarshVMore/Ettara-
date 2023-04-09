@@ -1,0 +1,17 @@
+.each_score {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: space-evenly;
+  color: white;
+  margin-top: 10px;
+}
+
+.leaderBoard .top {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  color: wheat;
+  margin-bottom: 30px;
+  margin-top: 50px;
+}

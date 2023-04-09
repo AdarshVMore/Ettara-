@@ -1,6 +1,29 @@
 .navbar {
   display: flex;
   width: 80vw;
+  padding: 20px 30px;
   align-items: center;
-  justify-content: center;
+  justify-content: end;
+}
+.navbar button {
+  border: 0px;
+  border-radius: 10px;
+  height: 40px;
+  background-color: #e2c2aa;
+  margin-right: 30px;
+}
+.navbar button a {
+  padding: 20px 20px;
+  color: #422700;
+  font-weight: 500;
+}
+
+.navbar .address {
+  margin-right: 20px;
+}
+
+.navbar .profile a {
+  padding: 5px 18px;
+  border-radius: 100px;
+  background-color: #ffffff;
 }

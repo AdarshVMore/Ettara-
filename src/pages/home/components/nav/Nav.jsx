@@ -29,7 +29,7 @@ function Nav({ account, contract, Owner }) {
       )}
       <div className="address">{account}</div>
       <div className="profile">
-        <a href="/home/profile/">profile</a>
+        <a href="/home/profile/"></a>
       </div>
     </div>
   );

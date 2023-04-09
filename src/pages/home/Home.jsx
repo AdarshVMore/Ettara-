@@ -49,14 +49,14 @@ function Home({ account, contract, provider }) {
             placeholder="Give urself a funky name"
             ref={funkyNameRef}
           />
-          <button onClick={addCustomer}>Check Leader Board</button>
+          <button onClick={addCustomer}>Next</button>
         </div>
       ) : (
         <>
-          <div className="nav">
+          <div>
             <Sidebar />
           </div>
-          <div className="sidebar">
+          <div>
             <Nav account={account} contract={contract} Owner={Owner} />
 
             <MainContainer

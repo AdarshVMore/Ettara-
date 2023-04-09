@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./sidebar.css";
+import logo from "../../../landing/imgs/logo.png";
 
 function Sidebar() {
   // const [Owner, setOwner] = useState(false);
@@ -17,9 +18,11 @@ function Sidebar() {
   // );
 
   return (
-    <div>
+    <div className="sidebar">
       <div className="logo">
-        <a href="/home/">Logo</a>
+        <a href="/home/">
+          <img src={logo} alt="" />
+        </a>
       </div>
       <div className="links">
         <a href="/home/leaderboard">Leaderboard</a>

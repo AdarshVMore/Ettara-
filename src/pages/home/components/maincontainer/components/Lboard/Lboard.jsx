@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { ethers } from "ethers";
+import "./leaderboard.css";
 
 function Lboard({ contract }) {
   const [allCustomer, setAllCustomer] = useState([]);
@@ -23,13 +24,20 @@ function Lboard({ contract }) {
   }, [contract]);
 
   return (
-    <div>
+    <div className="leaderBoard">
       {isDataReady ? (
         <ul>
+          <div className="top">
+            <div className="name-top">Names</div>
+            <div className="address-top">Addresses</div>
+            <div className="points-top">Points</div>
+          </div>
           {allCustomer.map((item, index) => (
-            <li key={index}>
-              name {item.funkyName}, points: {item.overAllPoints}
-            </li>
+            <div key={index} className="each_score">
+              <div className="name">{item.funkyName}</div>
+              <div className="address_cust"> {item.customer_address} </div>
+              <div className="points">{item.overAllPoints}</div>
+            </div>
           ))}
         </ul>
       ) : (
